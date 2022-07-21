@@ -96,6 +96,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 		params.put("amount",info.getAmount());
 		params.put("currency",info.getCurrency());
 		params.put("payment_method_types", paymentMethodTypes);
+		params.put("description", "Ecommerce Shopping Purchase");
+		params.put("receipt_email", info.getReceiptEmail());
 		
 		return PaymentIntent.create(params);
 	}
